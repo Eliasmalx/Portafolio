@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="meta-title">Portafolio</title>
+  <meta id="meta-description" name="description" content="" />
+  <meta name="keywords" content="desarrollador frontend España, proyectos backend junior, desarrollador junior España, React TypeScript portfolio, FastAPI PostgreSQL Docker, backend developer España" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    /* ============================================================
+    ██████╗  ██████╗  ██████╗ ████████╗███████╗ ██████╗ ██╗      BLOQUE CONFIG
+    ╚════██╗██╔═══██╗██╔════╝ ╚══██╔══╝██╔════╝██╔════╝ ██║      ════════════
+     █████╔╝██║   ██║██║         ██║   █████╗  ██║      ██║      Edita solo
+     ╚═══██╗██║   ██║██║         ██║   ██╔══╝  ██║      ╚═╝      este bloque
+    ██████╔╝╚██████╔╝╚██████╔╝   ██║   ███████╗╚██████╗  ██╗     para actualizar
+    ╚═════╝  ╚═════╝  ╚═════╝   ╚═╝   ╚══════╝ ╚═════╝  ╚═╝     el portafolio
+    ============================================================ */
+
+    const CONFIG = {
+
+      /* ── DATOS PERSONALES ────────────────────────────────────── */
+      nombre:        "Eliasmal Rodríguez",
+      rol:           "Desarrollador Junior · España",
+      tagline:       "Construyo productos web claros, rápidos y listos para crecer.",
+      descripcion:   "Soy Eliasmal Rodríguez, desarrollador junior orientado a frontend y backend con experiencia en React, TypeScript, Node.js, Python, FastAPI, Docker y PostgreSQL. Busco oportunidades en España para aportar código mantenible, APIs sólidas y experiencias web modernas.",
+
+      /* ── SOBRE MÍ ────────────────────────────────────────────── */
+      sobreMiParrafo1: "He trabajado en proyectos reales dentro de equipos multidisciplinares, construyendo CRUDs, endpoints REST e integraciones de IA en Python para transformar JSON en resúmenes inteligentes. Me interesa crear interfaces claras en React y sistemas backend robustos con FastAPI, Node.js y PostgreSQL.",
+      sobreMiParrafo2: "Mi siguiente paso es incorporarme a una empresa en España donde pueda seguir creciendo como desarrollador junior, aportar mentalidad de producto y participar en soluciones full-stack modernas con buenas prácticas de despliegue y arquitectura.",
+
+      /* ── CONTACTO ────────────────────────────────────────────── */
+      email:     "eliasmal0228@gmail.com",
+      linkedin:  "https://www.linkedin.com/in/eliasmal/",
+      github:    "https://github.com/Eliasmalx",
+
+      /* ── STATS HERO (3 cajas bajo la descripción) ────────────── */
+      stats: [
+        { label: "Enfoque",  valor: "Frontend + Backend" },
+        { label: "Stack",    valor: "React · FastAPI"    },
+        { label: "Objetivo", valor: "Trabajo junior en España" }
+      ],
+
+      /* ── HABILIDADES ─────────────────────────────────────────── */
+      habilidades: [
+        { nombre: "React",       desc: "Interfaces modernas y componentes reutilizables."         },
+        { nombre: "TypeScript",  desc: "Desarrollo tipado y escalable para frontend."             },
+        { nombre: "Node.js",     desc: "Servicios backend y lógica de servidor."                  },
+        { nombre: "Python",      desc: "APIs, automatización e integraciones de IA."              },
+        { nombre: "Docker",      desc: "Entornos consistentes y despliegues portables."           },
+        { nombre: "FastAPI",     desc: "APIs REST rápidas, limpias y bien estructuradas."         },
+        { nombre: "PostgreSQL",  desc: "Modelado y persistencia de datos para producto."          }
+      ],
+
+      /* ── EXPERIENCIA ─────────────────────────────────────────── */
+      experiencia: {
+        titulo:    "Desarrollo web en equipo multidisciplinar",
+        subtitulo: "Proyecto en equipo · Experiencia real",
+        resumen:   "Participación en una aplicación web junto a un equipo de 15 personas, contribuyendo en CRUDs, endpoints REST y un backend en Python para integrar IA y generar resúmenes inteligentes a partir de JSON.",
+        puntos: [
+          "Implementación de funcionalidades backend para flujos reales de producto.",
+          "Colaboración con otros perfiles técnicos dentro de un entorno de producción.",
+          "Aprendizaje continuo en arquitectura, despliegue y calidad del código."
+        ],
+        perfil: {
+          rol:         "Desarrollador frontend o full-stack junior en España.",
+          fortalezas:  "Aprendizaje rápido, backend sólido, interés por UX y mentalidad práctica.",
+          herramientas:"Git, Postman, Render, Vercel, SQLAlchemy y Tailwind CSS."
+        }
+      },
+
+      /* ── PROYECTOS ───────────────────────────────────────────── */
+      /* color: "sky" | "teal" | "fuchsia" | "amber"               */
+      proyectos: [
+        {
+          nombre:   "HelpDesk",
+          stack:    "Python · FastAPI · PostgreSQL",
+          badge:    "Backend",
+          color:    "sky",
+          desc:     "Plataforma para crear y gestionar tickets, pensada para usuarios y perfiles técnico/admin. Encaja muy bien como muestra de proyectos backend junior y dominio de operaciones CRUD en un contexto real.",
+          tags:     ["API REST", "Autenticación", "Testing", "Deploy"],
+          github:   "https://github.com/Eliasmalx/HelpDesk",
+          demo:     "https://help-desk-q51qr2ywl-eliasmalxs-projects.vercel.app/login"
+        },
+        {
+          nombre:   "i006-biotasys-ai",
+          stack:    "Python · IA · Backend",
+          badge:    "AI Backend",
+          color:    "teal",
+          desc:     "Backend enfocado a procesar JSON y generar resúmenes inteligentes para Biotasys. Pieza potente para destacar experiencia práctica con Python, lógica de negocio e integración de capacidades de IA.",
+          tags:     ["Python", "Procesamiento de datos", "Automatización"],
+          github:   "https://github.com/Eliasmalx/i006-biotasys-ai",
+          demo:     "https://github.com/Eliasmalx/i006-biotasys-ai"
+        },
+        {
+          nombre:   "QuizBoss",
+          stack:    "React · Python · Full-stack",
+          badge:    "Full-stack",
+          color:    "fuchsia",
+          desc:     "Sistema full-stack con frontend en React y backend en Python. Ideal para presentar versatilidad entre experiencia de usuario, estructura del proyecto y despliegue production-ready.",
+          tags:     ["React", "Python", "Arquitectura"],
+          github:   "https://github.com/Eliasmalx/QuizBoss",
+          demo:     "https://github.com/Eliasmalx/QuizBoss"
+        },
+        {
+          nombre:   "StarterProject",
+          stack:    "React · Flask · Starter",
+          badge:    "Base app",
+          color:    "amber",
+          desc:     "Starter package para lanzar proyectos con React y Flask. Refuerza tu perfil como desarrollador con visión práctica para arrancar productos y estructurar aplicaciones mantenibles desde cero.",
+          tags:     ["React", "Flask", "Boilerplate"],
+          github:   "https://github.com/Eliasmalx/StarterProject",
+          demo:     "https://github.com/Eliasmalx/StarterProject"
+        }
+      ]
+
+    }; // fin CONFIG — no editar por debajo de esta línea
+  </script>
+
+  <script>
+    tailwind.config = {
+      darkMode: ['selector', '[data-theme="dark"]'],
+      theme: {
+        extend: {
+          fontFamily: {
+            sans:    ['Satoshi', 'sans-serif'],
+            display: ['Cabinet Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── BASE ─────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-font-smoothing: antialiased; }
+    body { min-height: 100dvh; line-height: 1.6; font-family: 'Satoshi', sans-serif; }
+    img, picture, video, canvas, svg { display: block; max-width: 100%; }
+    h1, h2, h3, h4 { text-wrap: balance; line-height: 1.1; }
+    p, li { text-wrap: pretty; }
+    button { cursor: pointer; background: none; border: none; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border-width:0; }
+    :focus-visible { outline: 2px solid var(--clr-primary); outline-offset: 3px; border-radius: 6px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration:.01ms!important; transition-duration:.01ms!important; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* ── TOKENS DE COLOR ──────────────────────────────────────── */
+    :root, [data-theme="dark"] {
+      --clr-bg:           #0b1020;
+      --clr-panel:        #121a2f;
+      --clr-panel-soft:   #18223d;
+      --clr-border:       rgba(148,163,184,.12);
+      --clr-border-hover: rgba(56,189,248,.35);
+      --clr-text:         #eef2ff;
+      --clr-muted:        #94a3b8;
+      --clr-faint:        #64748b;
+      --clr-primary:      #38bdf8;
+      --clr-primary-text: #0f172a;
+      --clr-accent:       #14b8a6;
+      --clr-glass-bg:     rgba(18,26,47,.72);
+      --clr-glass-hover:  rgba(18,26,47,.90);
+      --clr-overlay:      rgba(255,255,255,.05);
+      --clr-overlay-h:    rgba(255,255,255,.10);
+      --shadow-soft: 0 10px 40px rgba(0,0,0,.35);
+      --shadow-glow: 0 0 0 1px rgba(56,189,248,.15), 0 20px 50px rgba(20,184,166,.12);
+    }
+
+    [data-theme="light"] {
+      --clr-bg:           #f1f5f9;
+      --clr-panel:        #ffffff;
+      --clr-panel-soft:   #f8fafc;
+      --clr-border:       rgba(30,41,59,.12);
+      --clr-border-hover: rgba(2,132,199,.45);
+      --clr-text:         #0f172a;
+      --clr-muted:        #475569;
+      --clr-faint:        #94a3b8;
+      --clr-primary:      #0284c7;
+      --clr-primary-text: #ffffff;
+      --clr-accent:       #0d9488;
+      --clr-glass-bg:     rgba(255,255,255,.80);
+      --clr-glass-hover:  rgba(255,255,255,.96);
+      --clr-overlay:      rgba(30,41,59,.05);
+      --clr-overlay-h:    rgba(30,41,59,.09);
+      --shadow-soft: 0 10px 40px rgba(15,23,42,.12);
+      --shadow-glow: 0 0 0 1px rgba(2,132,199,.18), 0 20px 50px rgba(13,148,136,.10);
+    }
+
+    /* ── LAYOUT TOKENS ────────────────────────────────────────── */
+    body {
+      background-color: var(--clr-bg);
+      color: var(--clr-text);
+      transition: background-color .3s ease, color .3s ease;
+    }
+
+    /* ── FONDO RADIAL ─────────────────────────────────────────── */
+    .bg-radial {
+      background:
+        radial-gradient(circle at top left,   rgba(56,189,248,.11), transparent 28%),
+        radial-gradient(circle at 80% 18%,    rgba(124,58,237,.10), transparent 24%),
+        radial-gradient(circle at bottom right,rgba(20,184,166,.09), transparent 25%),
+        var(--clr-bg);
+    }
+    [data-theme="light"] .bg-radial {
+      background:
+        radial-gradient(circle at top left,    rgba(2,132,199,.07),  transparent 28%),
+        radial-gradient(circle at 80% 18%,     rgba(99,102,241,.06), transparent 24%),
+        radial-gradient(circle at bottom right,rgba(13,148,136,.06), transparent 25%),
+        var(--clr-bg);
+    }
+
+    /* ── GLASS ────────────────────────────────────────────────── */
+    .glass {
+      background: var(--clr-glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* ── GRID PATTERN ─────────────────────────────────────────── */
+    .grid-pattern {
+      position: absolute; inset: 0; pointer-events: none;
+      background-image:
+        linear-gradient(var(--clr-border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--clr-border) 1px, transparent 1px);
+      background-size: 32px 32px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.7), transparent);
+    }
+
+    /* ── HEADLINE GRADIENT ────────────────────────────────────── */
+    .headline-grad {
+      background: linear-gradient(90deg, var(--clr-text) 0%, var(--clr-primary) 50%, var(--clr-accent) 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    /* ── NAV ──────────────────────────────────────────────────── */
+    .nav-bar {
+      background: color-mix(in oklch, var(--clr-bg) 72%, transparent);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .nav-link {
+      color: var(--clr-muted);
+      font-size: .875rem;
+      transition: color .18s ease;
+    }
+    .nav-link:hover { color: var(--clr-text); }
+
+    /* ── LOGO MARK ────────────────────────────────────────────── */
+    .logo-mark {
+      position: relative; width: 42px; height: 42px; flex-shrink: 0;
+    }
+    .logo-mark::before, .logo-mark::after {
+      content: ''; position: absolute; inset: 0;
+      border-radius: 14px; border: 1.5px solid;
+    }
+    .logo-mark::before { border-color: color-mix(in oklch, var(--clr-primary) 55%, transparent); }
+    .logo-mark::after  { inset: 8px; border-color: color-mix(in oklch, var(--clr-accent) 65%, transparent); }
+
+    /* ── BOTONES ──────────────────────────────────────────────── */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: .75rem 1.5rem;
+      background: var(--clr-primary); color: var(--clr-primary-text);
+      font-weight: 600; font-size: 1rem;
+      border-radius: 9999px;
+      box-shadow: var(--shadow-glow);
+      transition: background .18s ease, transform .18s ease;
+      text-decoration: none;
+    }
+    .btn-primary:hover { background: color-mix(in oklch, var(--clr-primary) 80%, white); transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0); }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; padding: .75rem 1.5rem;
+      border: 1px solid var(--clr-border); background: var(--clr-overlay);
+      color: var(--clr-text); font-weight: 600; font-size: 1rem;
+      border-radius: 9999px;
+      transition: border-color .18s ease, background .18s ease;
+      text-decoration: none;
+    }
+    .btn-ghost:hover { border-color: color-mix(in oklch, var(--clr-accent) 45%, transparent); background: var(--clr-overlay-h); }
+
+    .btn-sm {
+      display: inline-flex; align-items: center; min-height: 46px;
+      padding: .65rem 1.25rem; border-radius: 9999px;
+      font-size: .875rem; font-weight: 600; text-decoration: none;
+      transition: background .18s ease, border-color .18s ease;
+    }
+    .btn-sm-filled {
+      background: var(--clr-overlay); color: var(--clr-text);
+    }
+    .btn-sm-filled:hover { background: var(--clr-overlay-h); }
+
+    /* ── STAT CARD ────────────────────────────────────────────── */
+    .stat-card {
+      background: var(--clr-glass-bg);
+      border: 1px solid var(--clr-border);
+      border-radius: 1.5rem; padding: 1.25rem;
+    }
+    .stat-label  { font-size: .8rem;  color: var(--clr-muted); }
+    .stat-value  { font-size: 1.2rem; font-weight: 700; color: var(--clr-text); margin-top: .5rem; font-family: 'Cabinet Grotesk', sans-serif; }
+
+    /* ── HERO INFO CARD ───────────────────────────────────────── */
+    .info-row {
+      background: var(--clr-overlay); border: 1px solid var(--clr-border);
+      border-radius: 1rem; padding: 1rem 1.25rem;
+    }
+    .info-row-label { font-size: .8rem; color: var(--clr-muted); }
+    .info-row-val   { font-size: .95rem; font-weight: 600; color: var(--clr-text); margin-top: .25rem; }
+
+    /* ── PROJECT CARD ─────────────────────────────────────────── */
+    .project-card {
+      border-radius: 2rem; padding: 1.75rem;
+      background: var(--clr-glass-bg);
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-soft);
+      transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--clr-border-hover);
+      box-shadow: var(--shadow-glow);
+    }
+    .project-stack { font-size: .8rem; margin-bottom: .5rem; }
+    .project-title { font-family: 'Cabinet Grotesk', sans-serif; font-size: 2rem; font-weight: 800; color: var(--clr-text); }
+    .project-desc  { margin-top: 1.25rem; font-size: .95rem; line-height: 1.75; color: var(--clr-muted); }
+    .tag-pill {
+      background: color-mix(in oklch, var(--clr-primary) 9%, var(--clr-overlay));
+      border: 1px solid var(--clr-border);
+      color: var(--clr-muted);
+      border-radius: 9999px; padding: .45rem .9rem; font-size: .8rem;
+    }
+
+    /* ── SKILL CARD ───────────────────────────────────────────── */
+    .skill-card {
+      background: var(--clr-glass-bg); border: 1px solid var(--clr-border);
+      border-radius: 1.5rem; padding: 1.25rem 1.5rem;
+      transition: border-color .2s ease, background .2s ease;
+    }
+    .skill-card:hover {
+      border-color: color-mix(in oklch, var(--clr-primary) 35%, transparent);
+      background: var(--clr-glass-hover);
+    }
+    .skill-name { font-family: 'Cabinet Grotesk', sans-serif; font-size: 1.4rem; font-weight: 700; color: var(--clr-text); }
+    .skill-desc { font-size: .8rem; color: var(--clr-muted); margin-top: .4rem; }
+
+    /* ── BADGE ────────────────────────────────────────────────── */
+    .badge {
+      display: inline-flex; align-items: center;
+      padding: .25rem .75rem; border-radius: 9999px;
+      font-size: .7rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+    }
+
+    /* ── BADGE COLORS ─────────────────────────────────────────── */
+    .badge-sky     { background: color-mix(in oklch,#38bdf8 14%,transparent); border:1px solid color-mix(in oklch,#38bdf8 30%,transparent); color:#38bdf8; }
+    .badge-teal    { background: color-mix(in oklch,#14b8a6 14%,transparent); border:1px solid color-mix(in oklch,#14b8a6 30%,transparent); color:#14b8a6; }
+    .badge-fuchsia { background: color-mix(in oklch,#d946ef 14%,transparent); border:1px solid color-mix(in oklch,#d946ef 30%,transparent); color:#d946ef; }
+    .badge-amber   { background: color-mix(in oklch,#f59e0b 14%,transparent); border:1px solid color-mix(in oklch,#f59e0b 30%,transparent); color:#f59e0b; }
+
+    [data-theme="light"] .badge-sky     { color:#0284c7; }
+    [data-theme="light"] .badge-teal    { color:#0d9488; }
+    [data-theme="light"] .badge-fuchsia { color:#a21caf; }
+    [data-theme="light"] .badge-amber   { color:#b45309; }
+
+    .stack-sky     { color:#38bdf8; }
+    .stack-teal    { color:#14b8a6; }
+    .stack-fuchsia { color:#d946ef; }
+    .stack-amber   { color:#f59e0b; }
+
+    .btn-outline-sky     { border:1px solid color-mix(in oklch,#38bdf8 30%,transparent); color:#38bdf8; }
+    .btn-outline-sky:hover { border-color:color-mix(in oklch,#38bdf8 55%,transparent); }
+    .btn-outline-teal    { border:1px solid color-mix(in oklch,#14b8a6 30%,transparent); color:#14b8a6; }
+    .btn-outline-teal:hover { border-color:color-mix(in oklch,#14b8a6 55%,transparent); }
+    .btn-outline-fuchsia { border:1px solid color-mix(in oklch,#d946ef 30%,transparent); color:#d946ef; }
+    .btn-outline-fuchsia:hover { border-color:color-mix(in oklch,#d946ef 55%,transparent); }
+    .btn-outline-amber   { border:1px solid color-mix(in oklch,#f59e0b 30%,transparent); color:#f59e0b; }
+    .btn-outline-amber:hover { border-color:color-mix(in oklch,#f59e0b 55%,transparent); }
+
+    [data-theme="light"] .stack-sky     { color:#0284c7; }
+    [data-theme="light"] .stack-teal    { color:#0d9488; }
+    [data-theme="light"] .stack-fuchsia { color:#a21caf; }
+    [data-theme="light"] .stack-amber   { color:#b45309; }
+    [data-theme="light"] .btn-outline-sky     { color:#0284c7; border-color:rgba(2,132,199,.35); }
+    [data-theme="light"] .btn-outline-teal    { color:#0d9488; border-color:rgba(13,148,136,.35); }
+    [data-theme="light"] .btn-outline-fuchsia { color:#a21caf; border-color:rgba(162,28,175,.35); }
+    [data-theme="light"] .btn-outline-amber   { color:#b45309; border-color:rgba(180,83,9,.35); }
+
+    /* ── CONTACT LINKS ────────────────────────────────────────── */
+    .contact-link {
+      display: flex; align-items: center; justify-content: space-between;
+      min-height: 52px; padding: 1rem 1.25rem;
+      background: var(--clr-overlay); color: var(--clr-text);
+      border: 1px solid var(--clr-border); border-radius: 1rem;
+      font-size: .95rem; font-weight: 500; text-decoration: none;
+      transition: background .18s ease, border-color .18s ease;
+    }
+    .contact-link:hover {
+      background: var(--clr-overlay-h);
+      border-color: color-mix(in oklch, var(--clr-primary) 45%, transparent);
+    }
+
+    /* ── SECTION LABEL ────────────────────────────────────────── */
+    .section-label {
+      font-size: .75rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--clr-primary);
+    }
+    .section-title {
+      margin-top: .75rem; font-family: 'Cabinet Grotesk', sans-serif;
+      font-weight: 800; color: var(--clr-text);
+    }
+
+    /* ── EXPERIENCE ───────────────────────────────────────────── */
+    .exp-bullet { color: var(--clr-muted); font-size: .95rem; line-height: 1.7; }
+
+    /* ── THEME TOGGLE ─────────────────────────────────────────── */
+    .theme-btn {
+      display: flex; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 9999px;
+      border: 1px solid var(--clr-border); background: var(--clr-overlay);
+      color: var(--clr-text);
+      transition: border-color .18s ease, background .18s ease;
+    }
+    .theme-btn:hover { border-color: color-mix(in oklch, var(--clr-primary) 40%, transparent); }
+
+    /* ── REVEAL ANIMATION ─────────────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── FOOTER ───────────────────────────────────────────────── */
+    .site-footer {
+      border-top: 1px solid var(--clr-border);
+      color: var(--clr-muted);
+      font-size: .8rem; text-align: center; padding: 2rem 1rem;
+    }
+
+    /* ── DISPONIBLE BADGE ─────────────────────────────────────── */
+    .disponible-badge {
+      padding: .35rem .9rem; border-radius: 9999px; font-size: .75rem; font-weight: 600;
+      background: color-mix(in oklch, var(--clr-accent) 14%, transparent);
+      border: 1px solid color-mix(in oklch, var(--clr-accent) 30%, transparent);
+      color: var(--clr-accent);
+    }
+  </style>
+</head>
+
+<body class="bg-radial">
+  <a href="#contenido" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-slate-900">Saltar al contenido</a>
+
+  <!-- ══════════════════════════════════ NAV ══════════════════════════════════ -->
+  <header class="nav-bar sticky top-0 z-40">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+      <a href="#hero" class="flex items-center gap-3" aria-label="Inicio">
+        <div class="logo-mark"></div>
+        <div>
+          <p id="nav-nombre" class="font-display text-lg font-bold" style="color:var(--clr-text)"></p>
+          <p id="nav-rol"    class="text-sm" style="color:var(--clr-muted)"></p>
+        </div>
+      </a>
+      <nav class="hidden items-center gap-6 md:flex" aria-label="Principal">
+        <a href="#sobre-mi"    class="nav-link">Sobre mí</a>
+        <a href="#proyectos"   class="nav-link">Proyectos</a>
+        <a href="#habilidades" class="nav-link">Habilidades</a>
+        <a href="#experiencia" class="nav-link">Experiencia</a>
+        <a href="#contacto"    class="nav-link">Contacto</a>
+      </nav>
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" class="theme-btn" aria-label="Cambiar tema">
+          <span id="themeIcon" style="font-size:1.1rem">☾</span>
+        </button>
+        <a id="nav-github" href="#" target="_blank" rel="noopener noreferrer"
+           class="hidden sm:inline-flex rounded-full px-5 py-2.5 text-sm font-semibold btn-ghost">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ══════════════════════════════ HERO ════════════════════════════════ -->
+    <section id="hero" class="relative overflow-hidden">
+      <div class="grid-pattern"></div>
+      <div class="mx-auto grid min-h-[88vh] max-w-7xl items-center gap-14 px-4 py-16 sm:px-6 lg:grid-cols-[1.2fr_.8fr] lg:px-8 lg:py-24">
+
+        <div class="relative z-10 reveal">
+          <p class="mb-5 inline-flex badge" style="background:color-mix(in oklch,var(--clr-accent) 12%,transparent);border:1px solid color-mix(in oklch,var(--clr-accent) 28%,transparent);color:var(--clr-accent)">
+            Desarrollador frontend España · proyectos backend junior
+          </p>
+          <h1 id="hero-tagline" class="font-display max-w-4xl font-extrabold" style="font-size:clamp(2.5rem,5.5vw,4.5rem);line-height:.95;color:var(--clr-text)"></h1>
+          <p  id="hero-desc"    class="mt-6 max-w-2xl text-lg leading-8" style="color:var(--clr-muted)"></p>
+          <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+            <a href="#proyectos" class="btn-primary">Ver proyectos destacados</a>
+            <a href="#contacto"  class="btn-ghost">Contactar</a>
+          </div>
+          <dl id="hero-stats" class="mt-10 grid gap-4 sm:grid-cols-3"></dl>
+        </div>
+
+        <div class="relative z-10 reveal">
+          <div class="glass rounded-[2rem] p-6">
+            <div class="flex items-center justify-between pb-5" style="border-bottom:1px solid var(--clr-border)">
+              <div>
+                <p class="section-label">Perfil técnico</p>
+                <h2 class="font-display text-2xl font-bold mt-2" style="color:var(--clr-text)">Full-stack con base backend</h2>
+              </div>
+              <span class="disponible-badge">Disponible</span>
+            </div>
+            <div class="mt-6 space-y-4">
+              <div class="info-row"><p class="info-row-label">Especialidad actual</p><p class="info-row-val">APIs REST, integraciones IA, arquitectura web y UI moderna</p></div>
+              <div class="info-row"><p class="info-row-label">Entorno de trabajo</p><p class="info-row-val">Git, Docker, Vercel, Render, PostgreSQL y colaboración en equipo</p></div>
+              <div class="info-row"><p class="info-row-label">Valor que aporto</p><p class="info-row-val">Código limpio, aprendizaje rápido y foco en producto real</p></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════ SOBRE MÍ ════════════════════════════ -->
+    <section id="sobre-mi" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-[.9fr_1.1fr]">
+        <div class="reveal">
+          <p class="section-label">Sobre mí</p>
+          <h2 class="section-title headline-grad" style="font-size:clamp(2rem,4vw,3rem)">Desarrollo orientado a producto, rendimiento y crecimiento profesional.</h2>
+        </div>
+        <div class="reveal glass rounded-[2rem] p-8">
+          <p id="sobre-p1" class="text-lg leading-8" style="color:var(--clr-muted)"></p>
+          <p id="sobre-p2" class="mt-5 text-lg leading-8" style="color:var(--clr-muted)"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════ PROYECTOS ═══════════════════════════ -->
+    <section id="proyectos" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mb-10 reveal flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="section-label" style="color:var(--clr-accent)">Proyectos destacados</p>
+          <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem)">Repositorios reales y orientados a portfolio</h2>
+        </div>
+        <a id="all-repos" href="#" target="_blank" rel="noopener noreferrer"
+           class="text-sm font-medium" style="color:var(--clr-primary)">Ver todos los repositorios ↗</a>
+      </div>
+      <div id="projects-grid" class="grid gap-6 lg:grid-cols-2"></div>
+    </section>
+
+    <!-- ══════════════════════════════ HABILIDADES ════════════════════════ -->
+    <section id="habilidades" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="grid gap-8 lg:grid-cols-[.85fr_1.15fr]">
+        <div class="reveal">
+          <p class="section-label">Habilidades</p>
+          <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem)">Tecnologías con las que trabajo</h2>
+          <p class="mt-5 text-lg leading-8" style="color:var(--clr-muted)">Un stack pensado para desarrollar interfaces modernas, APIs mantenibles y despliegues reproducibles para entornos reales.</p>
+        </div>
+        <div id="skills-grid" class="reveal grid gap-4 sm:grid-cols-2 lg:grid-cols-3"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════ EXPERIENCIA ════════════════════════ -->
+    <section id="experiencia" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="mb-10 reveal">
+        <p class="section-label" style="color:var(--clr-accent)">Experiencia</p>
+        <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem)">Experiencia laboral y colaboración en equipo</h2>
+      </div>
+      <div class="grid gap-6 lg:grid-cols-[1.1fr_.9fr]">
+        <article class="reveal glass rounded-[2rem] p-8">
+          <p id="exp-subtitulo" class="text-sm uppercase tracking-wide" style="color:var(--clr-muted)"></p>
+          <h3 id="exp-titulo"   class="font-display text-3xl font-bold mt-3" style="color:var(--clr-text)"></h3>
+          <p id="exp-resumen"   class="mt-5 text-lg leading-8" style="color:var(--clr-muted)"></p>
+          <ul id="exp-puntos"   class="mt-6 space-y-3"></ul>
+        </article>
+        <aside class="reveal glass rounded-[2rem] p-8">
+          <h3 class="font-display text-2xl font-bold" style="color:var(--clr-text)">Perfil profesional</h3>
+          <div id="perfil-info" class="mt-6 space-y-4"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════ CONTACTO ═══════════════════════════ -->
+    <section id="contacto" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div class="reveal glass rounded-[2rem] p-8 sm:p-12" style="box-shadow:var(--shadow-glow)">
+        <div class="grid gap-10 lg:grid-cols-[1fr_.8fr] lg:items-end">
+          <div>
+            <p class="section-label">Contacto</p>
+            <h2 class="section-title" style="font-size:clamp(2rem,4vw,3rem)">Disponible para nuevas oportunidades</h2>
+            <p class="mt-5 text-lg leading-8" style="color:var(--clr-muted)">Si buscas un desarrollador junior en España con base fuerte en backend, buena adaptación al frontend y ganas de crecer dentro de un equipo, aquí tienes mis canales principales.</p>
+          </div>
+          <div id="contact-links" class="grid gap-4"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer class="site-footer">
+    <p id="footer-text"></p>
+  </footer>
+
+  <!-- ══════════════════════════ RENDER + LÓGICA ═════════════════════════════ -->
+  <script>
+    /* ── THEME TOGGLE ──────────────────────────────────────────── */
+    const html = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon   = document.getElementById('themeIcon');
+    let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    const applyTheme = t => {
+      html.setAttribute('data-theme', t);
+      themeIcon.textContent = t === 'dark' ? '☾' : '☀';
+    };
+    applyTheme(theme);
+    themeToggle.addEventListener('click', () => { theme = theme === 'dark' ? 'light' : 'dark'; applyTheme(theme); });
+
+    /* ── HELPERS ───────────────────────────────────────────────── */
+    const $ = id => document.getElementById(id);
+    const txt = (id, val) => { const el = $(id); if (el) el.textContent = val; };
+    const html_ = (id, val) => { const el = $(id); if (el) el.innerHTML = val; };
+
+    /* ── RENDER META ───────────────────────────────────────────── */
+    document.title = `${CONFIG.nombre} | Desarrollador Frontend y Backend Junior en España`;
+    $('meta-description').setAttribute('content',
+      `Portafolio de ${CONFIG.nombre} — desarrollador junior en España con ${CONFIG.habilidades.map(h=>h.nombre).join(', ')}.`);
+
+    /* ── RENDER NAV ────────────────────────────────────────────── */
+    txt('nav-nombre', CONFIG.nombre);
+    txt('nav-rol',    CONFIG.rol);
+    const navGH = $('nav-github');
+    navGH.href        = CONFIG.github;
+    navGH.textContent = 'GitHub';
+
+    /* ── RENDER HERO ───────────────────────────────────────────── */
+    txt('hero-tagline', CONFIG.tagline);
+    txt('hero-desc',    CONFIG.descripcion);
+
+    const statsGrid = $('hero-stats');
+    CONFIG.stats.forEach(s => {
+      const dd = document.createElement('div');
+      dd.className = 'stat-card';
+      dd.innerHTML = `<dt class="stat-label">${s.label}</dt><dd class="stat-value">${s.valor}</dd>`;
+      statsGrid.appendChild(dd);
+    });
+
+    /* ── RENDER SOBRE MÍ ───────────────────────────────────────── */
+    txt('sobre-p1', CONFIG.sobreMiParrafo1);
+    txt('sobre-p2', CONFIG.sobreMiParrafo2);
+
+    /* ── RENDER PROYECTOS ──────────────────────────────────────── */
+    $('all-repos').href = CONFIG.github + '?tab=repositories';
+
+    const projGrid = $('projects-grid');
+    CONFIG.proyectos.forEach(p => {
+      const art = document.createElement('article');
+      art.className = 'project-card reveal';
+      art.innerHTML = `
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem">
+          <div>
+            <p class="project-stack stack-${p.color}">${p.stack}</p>
+            <h3 class="project-title">${p.nombre}</h3>
+          </div>
+          <span class="badge badge-${p.color}">${p.badge}</span>
+        </div>
+        <p class="project-desc">${p.desc}</p>
+        <div style="margin-top:1.5rem;display:flex;flex-wrap:wrap;gap:.5rem">
+          ${p.tags.map(t => `<span class="tag-pill">${t}</span>`).join('')}
+        </div>
+        <div style="margin-top:2rem;display:flex;flex-wrap:wrap;gap:.75rem">
+          <a href="${p.github}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-sm-filled">GitHub</a>
+          <a href="${p.demo}"   target="_blank" rel="noopener noreferrer" class="btn-sm btn-outline-${p.color}">Demo / código ↗</a>
+        </div>`;
+      projGrid.appendChild(art);
+    });
+
+    /* ── RENDER HABILIDADES ────────────────────────────────────── */
+    const skillsGrid = $('skills-grid');
+    CONFIG.habilidades.forEach((h, i) => {
+      const div = document.createElement('div');
+      div.className = 'skill-card' + (i === CONFIG.habilidades.length - 1 && CONFIG.habilidades.length % 3 !== 0 ? ' sm:col-span-2 lg:col-span-1' : '');
+      div.innerHTML = `<p class="skill-name">${h.nombre}</p><p class="skill-desc">${h.desc}</p>`;
+      skillsGrid.appendChild(div);
+    });
+
+    /* ── RENDER EXPERIENCIA ────────────────────────────────────── */
+    const exp = CONFIG.experiencia;
+    txt('exp-subtitulo', exp.subtitulo);
+    txt('exp-titulo',    exp.titulo);
+    txt('exp-resumen',   exp.resumen);
+    const puntosEl = $('exp-puntos');
+    exp.puntos.forEach(p => {
+      const li = document.createElement('li');
+      li.className = 'exp-bullet';
+      li.textContent = '• ' + p;
+      puntosEl.appendChild(li);
+    });
+    const perfilInfo = $('perfil-info');
+    [
+      ['Rol objetivo',  exp.perfil.rol],
+      ['Fortalezas',    exp.perfil.fortalezas],
+      ['Herramientas',  exp.perfil.herramientas]
+    ].forEach(([label, val]) => {
+      const p = document.createElement('p');
+      p.style.color = 'var(--clr-muted)';
+      p.innerHTML = `<span style="font-weight:600;color:var(--clr-text)">${label}:</span> ${val}`;
+      perfilInfo.appendChild(p);
+    });
+
+    /* ── RENDER CONTACTO ───────────────────────────────────────── */
+    const contactLinks = $('contact-links');
+    [
+      [CONFIG.email,    'mailto:' + CONFIG.email, CONFIG.email],
+      ['LinkedIn',      CONFIG.linkedin,           'LinkedIn'],
+      ['GitHub',        CONFIG.github,             'GitHub'],
+    ].forEach(([_label, href, text]) => {
+      const a = document.createElement('a');
+      a.className = 'contact-link';
+      a.href = href;
+      if (!href.startsWith('mailto')) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+      a.innerHTML = `<span>${text}</span><span>↗</span>`;
+      contactLinks.appendChild(a);
+    });
+
+    /* ── RENDER FOOTER ─────────────────────────────────────────── */
+    txt('footer-text', `© ${new Date().getFullYear()} ${CONFIG.nombre} · Portafolio profesional optimizado para SEO, dark mode y oportunidades junior en España.`);
+
+    /* ── JSON-LD DINÁMICO ──────────────────────────────────────── */
+    const ld = document.createElement('script');
+    ld.type = 'application/ld+json';
+    ld.textContent = JSON.stringify({
+      "@context": "https://schema.org", "@type": "Person",
+      "name": CONFIG.nombre, "jobTitle": "Desarrollador Junior",
+      "url": CONFIG.github,
+      "sameAs": [CONFIG.github, CONFIG.linkedin],
+      "email": CONFIG.email,
+      "knowsAbout": CONFIG.habilidades.map(h => h.nombre),
+      "address": { "@type": "PostalAddress", "addressCountry": "ES" }
+    });
+    document.head.appendChild(ld);
+
+    /* ── REVEAL ON SCROLL ──────────────────────────────────────── */
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.10 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
